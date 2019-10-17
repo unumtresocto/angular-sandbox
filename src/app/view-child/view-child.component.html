@@ -1,0 +1,13 @@
+<h2>View Children decorator Test</h2>
+<app-toc [TOCItems]="tocItems"></app-toc>
+<div *ngIf="dataReady$ | async">
+  <section appChildSelector>
+    Section 1
+  </section>
+  <section appChildSelector>
+    Section 2
+  </section>
+  <section appChildSelector>
+    Section 3
+  </section>
+</div>

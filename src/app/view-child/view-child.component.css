@@ -1,0 +1,14 @@
+:host {
+  position: relative;
+}
+
+app-toc {
+  position: fixed;
+  top: 210px;
+  right: 780px;
+  min-width: 50px;
+}
+
+section {
+  height: 640px;
+}
