@@ -10,11 +10,11 @@ import {
   ViewChildren
 } from "@angular/core";
 import { Observable, Subscription } from "rxjs";
+import { distinctUntilChanged, startWith } from "rxjs/operators";
 
 import { ChildSelectorDirective } from "./directives/child-selector.directive";
 import { VcDataProviderService } from "./services/vc-data-provider.service";
 import { TOCItem } from "./toc/toc.component";
-import { distinctUntilChanged, startWith } from "rxjs/operators";
 
 @Component({
   selector: "app-view-child",

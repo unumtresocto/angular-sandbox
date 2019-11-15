@@ -1,0 +1,10 @@
+<app-box-container></app-box-container>
+<div class="nested">
+  <button (click)="toggleHiddenContent()">
+    Click me to show content with scrollbar
+  </button>
+
+  <app-box-projector [showBoxes]="showContent">
+    <app-box-container [state]="true"></app-box-container>
+  </app-box-projector>
+</div>

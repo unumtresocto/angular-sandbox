@@ -1,8 +1,11 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
+import { ViewChildServicesModule } from "../view-child-services.module";
+
+
 @Injectable({
-  providedIn: "root"
+  providedIn: ViewChildServicesModule
 })
 export class VcDataProviderService {
   data$ = new BehaviorSubject<boolean>(false);

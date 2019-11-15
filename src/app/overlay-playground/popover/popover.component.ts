@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
@@ -11,7 +12,8 @@ import { DOCUMENT } from "@angular/common";
 @Component({
   selector: "app-popover",
   templateUrl: "./popover.component.html",
-  styleUrls: ["./popover.component.css"]
+  styleUrls: ["./popover.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PopoverComponent implements OnInit, OnDestroy {
   clickedOutside = new EventEmitter<void>();

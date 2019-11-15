@@ -23,6 +23,14 @@ export class NavigationComponent {
     {
       path: PATHS.overlay,
       title: "Overlay PG"
+    },
+    {
+      path: PATHS.scrollbar,
+      title: "Scrollbar PG"
+    },
+    {
+      path: PATHS.events,
+      title: "Events PG"
     }
   ];
 }

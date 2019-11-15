@@ -8,6 +8,8 @@ import { ViewChildModule } from "./view-child/view-child.module";
 import { DiPlaygroundModule } from "./di-playground/di-playground.module";
 import { ClickOutsidePlaygroundModule } from "./click-outside-playground/click-outside-playground.module";
 import { OverlayPlaygroundModule } from "./overlay-playground/overlay-playground.module";
+import { ScrollbarPlaygroundModule } from "./scrollbar-playground/scrollbar-playground.module";
+import { EventsPlaygroundModule } from "./events-playground/events-playground.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +20,9 @@ import { OverlayPlaygroundModule } from "./overlay-playground/overlay-playground
     DiPlaygroundModule,
     ClickOutsidePlaygroundModule,
     OverlayPlaygroundModule,
-    AppRoutingModule
+    ScrollbarPlaygroundModule,
+    EventsPlaygroundModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,16 @@
+<button (click)="toggleHiddenContent()">
+  Click me to show content with scrollbar
+</button>
+
+<div *ngIf="showContent || state; else dummy" class="hidden-content-container">
+  <div perfectScrollbar class="hidden-content">
+    <div class="box box--1"></div>
+    <div class="box box--2"></div>
+    <div class="box box--3"></div>
+  </div>
+</div>
+<ng-template #dummy>
+  <div class="box box--4"></div>
+</ng-template>
+
+

@@ -1,5 +1,7 @@
 :host {
   position: relative;
+  display: block;
+  height: var(--no-scroll-content-height);
 }
 
 app-toc {

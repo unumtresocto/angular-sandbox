@@ -9,6 +9,7 @@
   margin: 0 16px 0;
   list-style: none;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 
 .navigation__link:focus {
@@ -16,6 +17,5 @@
 }
 
 .navigation__link--active {
-  border-bottom: 2px solid white;
-  border-bottom: 2px solid white;
+  border-bottom-color: white;
 }

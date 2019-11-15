@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ComponentFactoryResolver,
   ComponentRef,
@@ -16,13 +17,15 @@ import {
 } from "@angular/cdk/overlay";
 import { ESCAPE, UP_ARROW } from "@angular/cdk/keycodes";
 import { ComponentPortal } from "@angular/cdk/portal";
-import { PopoverComponent } from "./popover/popover.component";
 import { take } from "rxjs/operators";
+
+import { PopoverComponent } from "./popover/popover.component";
 
 @Component({
   selector: "app-overlay-playground",
   templateUrl: "./overlay-playground.component.html",
-  styleUrls: ["./overlay-playground.component.css"]
+  styleUrls: ["./overlay-playground.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OverlayPlaygroundComponent implements OnInit {
   private overlayRef: OverlayRef | null;
