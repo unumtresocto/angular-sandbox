@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.di-pg__main {
+  display: grid;
+  height: 100%;
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
+  grid-template:
+    "a b c" 1fr
+    "d e f" 1fr
+    / 1fr 1fr 1fr;
+}
+
+.a {
+   grid-area: a;
+ }
+.b {
+  grid-area: b;
+}
+.c {
+  grid-area: c;
+}
+.d {
+  grid-area: d;
+}
+.e {
+  grid-area: e;
+}
+.f {
+  grid-area: f;
+}

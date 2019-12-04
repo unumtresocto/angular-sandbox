@@ -1,1 +1,20 @@
-<p>di-playground works!</p>
+<main class="di-pg__main">
+  <app-card [name]="'Simple card'" class="a">
+    <app-child></app-child>
+  </app-card>
+  <app-card class="b">
+    <app-child></app-child>
+  </app-card>
+  <app-card class="c">
+    <app-child></app-child>
+  </app-card>
+  <app-card class="d">
+    <app-child></app-child>
+  </app-card>
+  <app-card class="e">
+    <app-child></app-child>
+  </app-card>
+  <app-card [name]="'Lazy Card'" class="f">
+    <router-outlet></router-outlet>
+  </app-card>
+</main>

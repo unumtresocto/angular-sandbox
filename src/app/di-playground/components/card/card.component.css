@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  background-color: white;
+  padding: 5px;
+  transition: box-shadow ease-in 0.3s;
+}
+
+:host:hover {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.75);
+}
+
+.card__header {
+  height: 22px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__body {
+
+}

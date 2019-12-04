@@ -22,7 +22,7 @@ export class ClickTestComponent {
 
   constructor(
     private readonly vcr: ViewContainerRef,
-    private readonly cfr: ComponentFactoryResolver
+    private readonly cfr: ComponentFactoryResolver,
   ) {}
 
   handleClick() {
