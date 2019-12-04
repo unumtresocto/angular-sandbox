@@ -4,15 +4,15 @@ import { BehaviorSubject } from "rxjs";
 @Injectable({
   providedIn: "root"
 })
-export class GlobalLevelService {
+export class CounterService {
   // tslint:disable-next-line:variable-name
   private _counter$ = new BehaviorSubject(0);
 
-  get counter() {
+  get counter$() {
     return this._counter$.asObservable();
   }
 
-  name = "Global Service";
+  name = "Counter";
 
   constructor() {}
 

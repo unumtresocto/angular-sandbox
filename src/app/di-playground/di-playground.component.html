@@ -1,20 +1,33 @@
 <main class="di-pg__main">
-  <app-card [name]="'Simple card'" class="a">
+  <app-card>
     <app-child></app-child>
   </app-card>
-  <app-card class="b">
+  <app-card>
     <app-child></app-child>
   </app-card>
-  <app-card class="c">
+  <app-card appCustomCardConfig>
     <app-child></app-child>
   </app-card>
-  <app-card class="d">
+  <app-card appReplaceCounter>
     <app-child></app-child>
   </app-card>
-  <app-card class="e">
+  <app-card>
+    <app-child appReplaceCounter></app-child>
+  </app-card>
+  <app-card appReplaceWithBroken>
     <app-child></app-child>
   </app-card>
-  <app-card [name]="'Lazy Card'" class="f">
-    <router-outlet></router-outlet>
+  <app-card>
+    <app-child appReplaceWithGlobalCounter></app-child>
+  </app-card>
+  <app-card appReplaceWithGlobalCounter>
+    <app-child></app-child>
+  </app-card>
+  <app-card appReplaceWithGlobalCounter>
+    <app-child></app-child>
   </app-card>
 </main>
+<br>
+<h2>Lazy part</h2>
+<br>
+<router-outlet></router-outlet>

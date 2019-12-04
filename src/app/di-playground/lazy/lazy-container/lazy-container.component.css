@@ -1,9 +1,4 @@
 :host {
-  display: block;
-  height: 100%;
-}
-
-.di-pg__main {
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 15px;

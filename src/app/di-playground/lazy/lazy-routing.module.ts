@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
-import { LazyChildComponent } from "./lazy-child/lazy-child.component";
+import { LazyContainerComponent } from "./lazy-container/lazy-container.component";
 
-const routes = [{ path: "", component: LazyChildComponent }];
+const routes = [{ path: "", component: LazyContainerComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
