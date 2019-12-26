@@ -1,0 +1,8 @@
+<p>
+  <span>Service Name:</span> <strong>{{ serviceName }}</strong>
+</p>
+<p>
+  <span>Service Counter:</span> <strong>{{ counter$ | async }}</strong>
+</p>
+<br>
+<button (click)="incrementCounter()">ClickMeToIncrementCounter</button>
