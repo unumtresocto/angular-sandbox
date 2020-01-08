@@ -10,6 +10,7 @@ import { ClickOutsidePlaygroundModule } from "./click-outside-playground/click-o
 import { OverlayPlaygroundModule } from "./overlay-playground/overlay-playground.module";
 import { ScrollbarPlaygroundModule } from "./scrollbar-playground/scrollbar-playground.module";
 import { EventsPlaygroundModule } from "./events-playground/events-playground.module";
+import { MemoModule } from "./memo/memo.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { EventsPlaygroundModule } from "./events-playground/events-playground.mo
     OverlayPlaygroundModule,
     ScrollbarPlaygroundModule,
     EventsPlaygroundModule,
-    AppRoutingModule,
+    MemoModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

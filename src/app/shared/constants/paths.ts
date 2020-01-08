@@ -4,5 +4,6 @@ export const PATHS = {
   clickOutside: "click-outside-pg",
   overlay: "overlay-pg",
   scrollbar: "scrollbar-pg",
-  events: "events-pg"
+  events: "events-pg",
+  memo: "memo-game"
 };

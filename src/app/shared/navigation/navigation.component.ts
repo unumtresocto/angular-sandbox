@@ -31,6 +31,10 @@ export class NavigationComponent {
     {
       path: PATHS.events,
       title: "Events PG"
+    },
+    {
+      path: PATHS.memo,
+      title: "Memo Game"
     }
   ];
 }

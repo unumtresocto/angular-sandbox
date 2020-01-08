@@ -8,7 +8,7 @@ import { ReplaceCounterDirective } from "./directives/replace-counter.directive"
 import { ReplaceWithGlobalCounterDirective } from "./directives/replace-with-global-counter.directive";
 import { ReplaceWithBrokenDirective } from "./directives/replace-with-broken.directive";
 import { DiSharedModule } from "./di-shared/di-shared.module";
-import { CustomCardConfigDirective } from './directives/custom-card-config.directive';
+import { CustomCardConfigDirective } from "./directives/custom-card-config.directive";
 
 @NgModule({
   declarations: [
@@ -19,6 +19,6 @@ import { CustomCardConfigDirective } from './directives/custom-card-config.direc
     ReplaceWithBrokenDirective,
     CustomCardConfigDirective
   ],
-  imports: [CommonModule, DiPlaygroundRoutingModule, DiSharedModule]
+  imports: [CommonModule, DiPlaygroundRoutingModule, DiSharedModule],
 })
 export class DiPlaygroundModule {}
