@@ -1,6 +1,13 @@
 import { Injectable } from "@angular/core";
-import { Observable, Subject } from "rxjs";
-import { map, switchMap } from "rxjs/operators";
+import { Observable, of } from "rxjs";
+import {
+  map,
+  mergeScan,
+  scan,
+  startWith,
+  switchMap,
+  tap
+} from "rxjs/operators";
 
 export interface MemoGameState {
   round: number;
@@ -31,24 +38,27 @@ export class MemoEngineService {
     newGameTrigger$: Observable<void>
   ): Observable<MemoGameState> {
     return newGameTrigger$.pipe(
-      map(() => {
-        return this.initNewRound(INITIAL_STATE, 1);
-      }),
-      switchMap(state => {
+      switchMap(() => {
+        const state = this.initNewRound(INITIAL_STATE, 1);
+
         return padClicks$.pipe(
-          map(clickedPad => {
-            return this.handlePadClick(state, clickedPad);
-          })
+          mergeScan((currState: MemoGameState, clickedPad: number) => {
+            return of(currState).pipe(
+              map(this.handlePadClick.bind(this, clickedPad)),
+              map(this.checkGameOver.bind(this)),
+              map(this.checkNewRound.bind(this))
+            );
+          }, state),
+          startWith(state)
         );
       }),
-      map(this.checkGameOver),
-      map(this.checkNewRound)
+      tap(state => console.log(state))
     );
   }
 
-  initNewRound(state: MemoGameState, round: number): MemoGameState {
-    const pattern = new Array(round).map(() => {
-      return Math.round(Math.random() * this.fieldSize);
+  private initNewRound(state: MemoGameState, round: number): MemoGameState {
+    const pattern = new Array(round).fill(null).map(() => {
+      return Math.floor(Math.random() * this.fieldSize);
     });
 
     return {
@@ -60,8 +70,8 @@ export class MemoEngineService {
   }
 
   private handlePadClick(
-    state: MemoGameState,
-    clickedPad: number
+    clickedPad: number,
+    state: MemoGameState
   ): MemoGameState {
     return { ...state, userPattern: [...state.userPattern, clickedPad] };
   }
@@ -75,13 +85,13 @@ export class MemoEngineService {
         };
   }
 
-  private checkNewRound(state: MemoGameState) {
+  private checkNewRound(state: MemoGameState): MemoGameState {
     return state.pattern.length === state.userPattern.length
       ? this.initNewRound(state, state.round + 1)
       : state;
   }
 
-  validatePattern(pattern, userPattern): boolean {
+  private validatePattern(pattern: number[], userPattern: number[]): boolean {
     return userPattern.reduce((acc, val, index) => {
       return acc && pattern[index] === val;
     }, true);

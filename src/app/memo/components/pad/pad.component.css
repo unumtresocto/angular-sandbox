@@ -9,7 +9,3 @@
   border: 4px solid #ffffff;
   transition: border-color 0.2s ease-in;
 }
-
-:host.active {
-  border-color: #ff0000;
-}

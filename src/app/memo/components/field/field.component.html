@@ -1,1 +1,4 @@
-<app-pad *ngFor="let card of cards"></app-pad>
+<app-pad
+  *ngFor="let card of cards; index as i"
+  (padClick)="handleClick($event, i)"
+></app-pad>

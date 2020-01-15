@@ -13,7 +13,8 @@ import {
   styleUrls: ["./pad.component.css"]
 })
 export class PadComponent {
-  @Output() click = new EventEmitter();
+  @Output()
+  padClick = new EventEmitter<PadComponent>();
 
   constructor(
     private readonly elementRef: ElementRef,
@@ -21,19 +22,17 @@ export class PadComponent {
   ) {}
 
   @HostListener("click")
-  onClick(): void {
-    this.click.emit();
-
-    this.tap();
+  handleClick(): void {
+    this.padClick.emit(this);
   }
 
-  tap(): void {
+  tap(color: string = "#ff0000"): void {
     const el = this.elementRef.nativeElement;
 
-    this.renderer.addClass(el, "active");
+    this.renderer.setStyle(el, "border-color", color);
 
     setTimeout(() => {
-      this.renderer.removeClass(el, "active");
+      this.renderer.setStyle(el, "border-color", "#ffffff");
     }, 200);
   }
 }
