@@ -20,6 +20,7 @@ import { ComponentPortal } from "@angular/cdk/portal";
 import { take } from "rxjs/operators";
 
 import { PopoverComponent } from "./popover/popover.component";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-overlay-playground",
@@ -37,7 +38,8 @@ export class OverlayPlaygroundComponent implements OnInit {
     private readonly overlay: Overlay,
     private readonly vcr: ViewContainerRef,
     private readonly cfr: ComponentFactoryResolver,
-    private readonly injector: Injector
+    private readonly injector: Injector,
+    private readonly httpClient: HttpClient
   ) {}
 
   ngOnInit() {}
@@ -130,5 +132,11 @@ export class OverlayPlaygroundComponent implements OnInit {
   private destroyPopover() {
     this.overlayRef.detach();
     this.popoverRef = null;
+  }
+
+  getSomething() {
+    this.httpClient
+      .get("something/really/important")
+      .subscribe(data => console.log(data));
   }
 }

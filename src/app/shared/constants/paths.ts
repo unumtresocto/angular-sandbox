@@ -5,5 +5,6 @@ export const PATHS = {
   overlay: "overlay-pg",
   scrollbar: "scrollbar-pg",
   events: "events-pg",
-  memo: "memo-game"
+  memo: "memo-game",
+  eager: "eager-pg"
 };

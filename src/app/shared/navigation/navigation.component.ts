@@ -35,6 +35,10 @@ export class NavigationComponent {
     {
       path: PATHS.memo,
       title: "Memo Game"
+    },
+    {
+      path: PATHS.eager,
+      title: "Eager Playground"
     }
   ];
 }

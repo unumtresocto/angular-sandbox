@@ -1,13 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import {
-  map,
-  mergeScan,
-  scan,
-  startWith,
-  switchMap,
-  tap
-} from "rxjs/operators";
+import { map, mergeScan, startWith, switchMap } from "rxjs/operators";
 
 export interface MemoGameState {
   round: number;
@@ -51,8 +44,7 @@ export class MemoEngineService {
           }, state),
           startWith(state)
         );
-      }),
-      tap(state => console.log(state))
+      })
     );
   }
 

@@ -11,6 +11,7 @@ import { OverlayPlaygroundModule } from "./overlay-playground/overlay-playground
 import { ScrollbarPlaygroundModule } from "./scrollbar-playground/scrollbar-playground.module";
 import { EventsPlaygroundModule } from "./events-playground/events-playground.module";
 import { MemoModule } from "./memo/memo.module";
+import { EagerModule } from "./eager/eager.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { MemoModule } from "./memo/memo.module";
     ScrollbarPlaygroundModule,
     EventsPlaygroundModule,
     MemoModule,
+    EagerModule,
     AppRoutingModule
   ],
   providers: [],
